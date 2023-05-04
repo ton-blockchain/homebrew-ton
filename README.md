@@ -1,8 +1,10 @@
-# homebrew-ton
-
-This git repository used solely for brew installations.
-
+### Install
 ```
 brew tap ton-blockchain/ton
 brew install ton
+```
+
+### Uninstall
+```
+brew uninstall ton
 ```
