@@ -43,6 +43,6 @@ jobs:
 
       - name: Create release
         run: |
-          gh release create --notes "" ${{ github.run_number }} ./*
+          gh release create --notes "" ${{ github.run_number }} ./*.tar.gz
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
