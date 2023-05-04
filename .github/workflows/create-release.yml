@@ -51,7 +51,7 @@ jobs:
 
       - name: Create release
         run: |
-          gh add ton.rb
+          git add ton.rb
           git commit -m "updating checksums" || true
           git push
           gh release create --notes "" ${{ github.run_number }} ./*.tar.gz
