@@ -45,3 +45,5 @@ jobs:
         run: |
           gh release delete -y ${{ github.run_number }}
           gh release create --notes "" ${{ github.run_number }} ./*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
