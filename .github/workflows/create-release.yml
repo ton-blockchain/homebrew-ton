@@ -46,8 +46,8 @@ jobs:
           echo get checksums
           SHA256_ARM64=$(shasum -a 256 ton-brew-arm64.tar.gz | cut -f 1 -d " ")
           SHA256_AMD64=$(shasum -a 256 ton-brew-x86-64.tar.gz | cut -f 1 -d " ")
-          sed -i '' "s/SHA256_ARM64/$SHA256_ARM64/" ton.rb
-          sed -i '' "s/SHA256_AMD64/$SHA256_AMD64/" ton.rb
+          sed -i '' "s/sha256 \".*\" #arm64/sha256 \"$SHA256_ARM64\" #arm64/" ton.rb
+          sed -i '' "s/sha256 \".*\" #amd64/sha256 \"$SHA256_AMD64\" #amd64/" ton.rb
 
       - name: Create release
         run: |
