@@ -56,7 +56,8 @@ jobs:
 
       - name: Create release
         run: |
-          LATEST_TAG=$(git ls-remote --tags https://github.com/ton-blockchain/ton/ | grep -oP "/tags/\K.*" | tail -1)
+          LATEST_TAG=$(git ls-remote --tags https://github.com/ton-blockchain/ton/  | tail -1 | sed -n -e 's/^.*tags\///p')
+          echo "LATEST_TAG $LATEST_TAG"
           git add ton.rb
           git commit -m "create release" || true
           git push          
