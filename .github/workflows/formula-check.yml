@@ -5,12 +5,12 @@ on:
     paths:
       - 'ton.rb'  # trigger this action only when ton.rb is modified
     branches:
-      - main
+      - master
   pull_request:
     paths:
       - 'ton.rb'  # also on PRs that modify ton.rb
     branches:
-      - main
+      - master
 
 jobs:
   brew_check:
