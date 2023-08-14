@@ -1,5 +1,5 @@
 class Ton < Formula
-  desc "TND, TON New DeFi, The Open Network core software collection and utilities"
+  desc "Software collection and utilities for TON New DeFi, The Open Network"
   homepage "https://github.com/ton-blockchain/ton"
 
   if Hardware::CPU.arm?
@@ -16,5 +16,9 @@ class Ton < Formula
   def install
     bin.install Dir["bin/*"]
     lib.install Dir["lib/*"]
+  end
+
+  test do
+    system "true"
   end
 end
