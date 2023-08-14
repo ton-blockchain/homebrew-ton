@@ -1,20 +1,20 @@
-name: CI Test Release
+name: Audit Test Release
 
 on: [workflow_dispatch]
 
 permissions: write-all
 
 jobs:
-  ci-test-release:
+  audit-test-release:
     runs-on: macos-12
     
     steps:
-      - name: Plug Tap
+      - name: Ton Plug Tap
         run: brew tap ton-blockchain/ton
 
-      - name: Install ton
+      - name: Ton Install
         run: brew install ton
 
-      - name: Test Audit
+      - name: Ton Test Audit
         run: brew audit --strict ton
     
