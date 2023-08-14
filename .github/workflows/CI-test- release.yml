@@ -1,0 +1,9 @@
+name: CI Test release
+
+on: [workflow_dispatch]
+
+permissions: write-all
+
+jobs:
+  create-release:
+    runs-on: macos-12
