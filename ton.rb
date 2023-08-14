@@ -1,5 +1,5 @@
 class Ton < Formula
-  desc "TON, The Open Network core software collection and utilities. A decentralized and open internet, created by the community using a technology designed by Telegram."
+  desc "The Open Network core software collection and utilities"
   homepage "https://github.com/ton-blockchain/ton"
 
   if Hardware::CPU.arm?
