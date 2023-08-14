@@ -10,7 +10,7 @@ jobs:
     
     steps:
       - name: Ton Plug Tap
-        run: brew tap ton-blockchain/ton
+        run: brew tap chbinousamy/ton-blockchain/ton
 
       - name: Ton Install
         run: brew install ton
