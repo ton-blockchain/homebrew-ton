@@ -16,5 +16,5 @@ jobs:
         run: brew install ton
 
       - name: Test Audit
-        run: brew audit --new-formula ton
+        run: brew audit --strict ton
     
