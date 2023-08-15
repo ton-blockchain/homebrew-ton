@@ -6,7 +6,7 @@ permissions: write-all
 
 jobs:
   ci-test-release:
-    runs-on: [macos-12, ARM64]
+    runs-on: [macos-12] # , ARM64]
     
     steps:
       - name: Ton Plug Tap
