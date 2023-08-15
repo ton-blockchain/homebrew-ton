@@ -1,4 +1,4 @@
-name: CI MacOSX Test Release
+name: MacOSX CI Test Release
 
 on:
   workflow_dispatch:
