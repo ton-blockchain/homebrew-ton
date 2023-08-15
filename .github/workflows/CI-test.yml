@@ -1,6 +1,10 @@
 name: CI Test Release
 
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v2023.*'
 
 permissions: write-all
 
