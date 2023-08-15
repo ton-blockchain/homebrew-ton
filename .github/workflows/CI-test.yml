@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     tags:
-      - 'v2023.*'
+      - 'v2023.*.*'
 
 permissions: write-all
 
