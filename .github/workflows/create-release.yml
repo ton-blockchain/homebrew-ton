@@ -6,7 +6,7 @@ permissions: write-all
 
 jobs:
   create-release:
-    runs-on: [macos-12, ARM64]
+    runs-on: [macos-12] # , ARM64]
 
     steps:
       - uses: actions/checkout@v3
