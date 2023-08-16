@@ -1,5 +1,5 @@
 class Ton < Formula
-  desc "Software collection and utilities for TON Next DeFi, The Open Network"
+  desc "Software collection and utilities for TON New DeFi, The Open Network"
   homepage "https://github.com/ton-blockchain/ton"
 
   if Hardware::CPU.arm?
