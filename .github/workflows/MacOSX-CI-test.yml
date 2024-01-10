@@ -1,0 +1,26 @@
+name: MacOSX CI Test Release
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v2023.*.*'
+
+permissions: write-all
+
+jobs:
+  ci-test-release:
+    runs-on: [macos-12] # , ARM64]
+    
+    steps:
+      - name: Ton Plug Tap
+        run: brew tap chbinousamy/homebrew-ton
+
+      - name: Ton Install
+        run: brew install ton
+
+      - name: Ton Audit
+        run: brew audit --strict ton
+
+      - name: Ton Test
+        run: brew test ton

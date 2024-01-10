@@ -1,0 +1,33 @@
+name: Ubuntu CI Test Release
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v2023.*.*'
+
+permissions: write-all
+
+jobs:
+  ci-test-release:
+    runs-on: [ubuntu-latest] # , ARM64]
+    
+    steps:
+      - name: Install homebrew
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          echo "/home/linuxbrew/.linuxbrew/bin" >> $GITHUB_PATH
+        
+      - name: Ton Plug Tap
+        run: |
+          brew tap chbinousamy/homebrew-ton
+          brew update
+
+      - name: Ton Install
+        run: brew install ton
+
+      - name: Ton Audit
+        run: brew audit --strict ton
+
+      - name: Ton Test
+        run: brew test ton

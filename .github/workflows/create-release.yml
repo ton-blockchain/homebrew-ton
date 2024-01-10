@@ -6,7 +6,7 @@ permissions: write-all
 
 jobs:
   create-release:
-    runs-on: macos-12
+    runs-on: [macos-12] # , ARM64]
 
     steps:
       - uses: actions/checkout@v3
@@ -66,3 +66,4 @@ jobs:
           gh release create --notes "" $LATEST_TAG ./*.tar.gz
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
