@@ -17,23 +17,25 @@ jobs:
           curl -L https://github.com/ton-blockchain/ton/releases/latest/download/ton-mac-x86-64.zip -o ton-mac-x86-64.zip
           unzip ton-mac-arm64.zip -d ton-mac-arm64
           unzip ton-mac-x86-64.zip -d ton-mac-x86-64
-          mkdir -p ton-brew-arm64/bin
-          mkdir -p ton-brew-arm64/lib
-          mkdir -p ton-brew-x86-64/bin
-          mkdir -p ton-brew-x86-64/lib
+          mkdir -p ton-brew-arm64/{bin,lib/fift,share/ton}
+          mkdir -p ton-brew-x86-64/{bin,lib/fift,share/ton}
           
-          mv ton-mac-arm64/* ton-brew-arm64/bin
-          chmod +x ton-brew-arm64/bin/*
-          mv ton-brew-arm64/bin/libtonlibjson.0.5.dylib ton-brew-arm64/lib/tonlibjson.dylib
+          cp -r ton-mac-arm64/smartcont ton-brew-arm64/share/ton/
+          cp ton-mac-arm64/lib/* ton-brew-arm64/lib/fift          
+          rm -rf ton-mac-arm64/{lib,smartcont}          
+          mv ton-mac-arm64/libtonlibjson* ton-brew-arm64/lib/
+          [ -e ton-mac-arm64/libemulator.dylib ] && mv ton-mac-arm64/libemulator.dylib ton-brew-arm64/lib/          
+          cp ton-mac-arm64/* ton-brew-arm64/bin/
           cd ton-brew-arm64
           tar -cvf ton-brew-arm64.tar.gz *
           
           cd ..
-          mv ton-mac-x86-64/* ton-brew-x86-64/bin
-          chmod +x ton-brew-x86-64/bin/*
-          mv ton-brew-x86-64/bin/libtonlibjson.dylib ton-brew-x86-64/lib/tonlibjson.dylib
-          rm -rf ton-brew-x86-64/bin/smartcont/
-          rm -rf ton-brew-x86-64/bin/lib
+          cp -r ton-mac-x86-64/smartcont ton-brew-x86-64/share/ton/
+          cp ton-mac-x86-64/lib/* ton-brew-x86-64/lib/fift          
+          rm -rf ton-mac-x86-64/{lib,smartcont}          
+          mv ton-mac-x86-64/libtonlibjson* ton-brew-x86-64/lib/
+          [ -e ton-mac-x86-64/libemulator.dylib ] && mv ton-mac-x86-64/libemulator.dylib ton-brew-x86-64/lib/
+          cp ton-mac-x86-64/* ton-brew-x86-64/bin/
           cd ton-brew-x86-64
           tar -cvf ton-brew-x86-64.tar.gz *
           

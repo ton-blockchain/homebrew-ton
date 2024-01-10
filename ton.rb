@@ -15,5 +15,6 @@ class Ton < Formula
   def install
     bin.install Dir["bin/*"]
     lib.install Dir["lib/*"]
+    pkgshare.install Dir["share/*"]
   end
 end
