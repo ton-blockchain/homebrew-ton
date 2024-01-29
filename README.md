@@ -22,6 +22,15 @@ brew install ton
 
 These commands will install the latest stable version of TON on your machine. 
 
+## Upgrade
+
+If you have already installed TON components, you can update them with the following command:
+
+```bash
+brew update
+brew reinstall ton
+```
+
 ## Uninstallation
 
 If you want to uninstall TON, you can do so with the following command:
