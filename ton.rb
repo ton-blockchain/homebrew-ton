@@ -4,10 +4,10 @@ class Ton < Formula
 
   if Hardware::CPU.arm?
     url "https://github.com/ton-blockchain/homebrew-ton/releases/latest/download/ton-brew-arm64.tar.gz"
-    sha256 "361d595ec408b7fe86e538b263c6fcfa7a99b1df3a62a229907e639e03929005" #arm64
+    sha256 "898b8be8d41a047dfbdffbadd5052ab81a62b9803ef4d54fd5a078d8648e9d5b" #arm64
   else
     url "https://github.com/ton-blockchain/homebrew-ton/releases/latest/download/ton-brew-x86-64.tar.gz"
-    sha256 "d181361c3b19f86283417e51d17a045384e08e8c727ef4da6773624cca68041c" #amd64
+    sha256 "0cd7e569f26e9c9851c78c250e1b8dc73b2386dbe653dbcf76fcbeb7b57396ef" #amd64
   end
 
   license "LGPL-2.0-only"
