@@ -17,4 +17,15 @@ class Ton < Formula
     lib.install Dir["lib/*"]
     pkgshare.install Dir["share/*"]
   end
+
+  def caveats
+    <<~EOS
+      To use fift, set the FIFTPATH environment variable:
+
+        export FIFTPATH=#{opt_lib}/fift:#{pkgshare}/smartcont
+
+      You can add the above line to your ~/.zshrc or ~/.bashrc so it’s available in every shell.
+    EOS
+  end
+
 end
