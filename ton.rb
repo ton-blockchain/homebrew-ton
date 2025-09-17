@@ -24,7 +24,25 @@ class Ton < Formula
 
         export FIFTPATH=#{opt_lib}/fift:#{pkgshare}/ton/smartcont
 
-      You can add the above line to your ~/.zshrc or ~/.bashrc so it’s available in every shell.
+      To use tolk, set the TOLK_STDLIB environment variable:
+
+        export TOLK_STDLIB=#{pkgshare}/ton/smartcont/tolk-stdlib
+
+      You can add the above lines to your ~/.zshrc or ~/.bashrc so it’s available in every shell.
+
+      Create a wallet with fift:
+
+      cd #{pkgshare}/ton/smartcont
+      fift -s new-wallet-v3.fif 0 42 my-wallet-name
+
+      Compile smart contract with tolk:
+
+      tolk <path-to-tolk-smart-contract>
+      
+      Compile smart contract with func:
+
+      cd #{pkgshare}/ton/smartcont
+      func -o simple-wallet-code.fif -SPA stdlib.fc simple-wallet-code.fc
     EOS
   end
 
