@@ -22,7 +22,7 @@ class Ton < Formula
     <<~EOS
       To use fift, set the FIFTPATH environment variable:
 
-        export FIFTPATH=#{opt_lib}/fift:#{pkgshare}/smartcont
+        export FIFTPATH=#{opt_lib}/fift:#{pkgshare}/ton/smartcont
 
       You can add the above line to your ~/.zshrc or ~/.bashrc so it’s available in every shell.
     EOS
